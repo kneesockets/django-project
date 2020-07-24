@@ -1,0 +1,5 @@
+DEBUG=False
+SECRET_KEY=!123456@123456#123456%123456
+ALLOWED_HOSTS=127.0.0.1, localhost
+DATABASE_URL=postgres://postgres:postgres@localhost/travis_ci_test
+INTERNAL_IPS=127.0.0.1, localhost

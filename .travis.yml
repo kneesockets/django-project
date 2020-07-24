@@ -1,0 +1,16 @@
+language: python
+python:
+  - "3.7"
+services:
+  - postgresql
+install:
+  - pipenv install
+  - pipenv sync -d
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+script:
+  - cp contrib/cenv .env
+  - pipenv run flake8 --ignore E501
+  - pipenv run pytest --cov=.
+after_install:
+  - pipenv run codecov
