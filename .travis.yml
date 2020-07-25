@@ -9,7 +9,7 @@ install:
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 script:
-  - cp contrib/cenv .env
+  - cp contrib/env .env
   - pipenv run flake8 --ignore E501
   - pipenv run pytest --cov=.
 after_install:
