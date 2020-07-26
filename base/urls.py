@@ -1,8 +1,8 @@
-from django.urls import path
-from base.views import index
+from django.urls import path, include
+from base import views
 
 app_name = 'base'
 
 urlpatterns = [
-    path('', index)
+    path('', views.index, name='home')
 ]
