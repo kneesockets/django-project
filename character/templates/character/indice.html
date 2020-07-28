@@ -1,0 +1,22 @@
+{% extends "base/index.html" %}
+
+{% block content %}
+
+<h1 class="h3">Characters</h1>
+
+<ol class="nav flex-column" style="list-style-type: decimal;">
+
+    {% for video in videos %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'character:video' name=video.slug %}">{{video.character}}</a>
+    </li>
+    {% empty %}
+    <li class="nav-item">
+        Nenhum personagem encontrado.
+    </li>
+    {% endfor %}
+
+</ol>
+
+
+{% endblock content %}

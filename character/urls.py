@@ -4,5 +4,6 @@ from character import views
 app_name = 'character'
 
 urlpatterns = [
-    path('video/<slug:name>', views.video, name='video')
+    path('video/<slug:name>', views.video, name='video'),
+    path('indice/', views.indice, name='indice')
 ]
